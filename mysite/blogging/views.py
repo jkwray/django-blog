@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from django.template import loader
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from blogging.models import Post
 
 def list_view(request):
-    context = {'posts': Post.objects.all()}
+    published = Post.objects.exclude(published_date__exact=None)
+    posts = published.order_by('-published_date')
+    context = {'posts': posts}
     return render(request, 'blogging/list.html', context)
 
 def detail_view(request, post_id):
