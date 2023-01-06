@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ blog.title }}</h1>
-<div class="blog-body">
-    {{ blog.text }}
+<h1>{{ post.title }}</h1>
+<div class="post-body">
+    {{ post.text }}
 </div>
-<div class="blog-body">
-    By: {{ blog.author}}
+<br/>
+<div>
+    By: {{ post.author }}
+</div>
+
 </div>
 {% endblock %}

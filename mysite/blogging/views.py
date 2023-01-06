@@ -4,7 +4,7 @@ from blogging.models import Post
 
 def list_view(request):
     context = {'posts': Post.objects.all()}
-    return render(request, 'polling/list.html', context)
+    return render(request, 'blogging/list.html', context)
 
 def detail_view(request, post_id):
     try:

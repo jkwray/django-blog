@@ -1,5 +1,6 @@
 from django.test import TestCase
-from django.contrib.auth.models import User, Post
+from django.contrib.auth.models import User
+from blogging.models import Post
 
 class PostTestCase(TestCase):
     fixtures = ['blogging_test_fixture.json', ]
