@@ -10,8 +10,9 @@ def list_view(request):
     return render(request, 'blogging/list.html', context)
 
 def detail_view(request, post_id):
+    published = Post.objects.exclude(published_date__exact=None)
     try:
-        post = Post.objects.get(pk=post_id)
+        post = published.get(pk=post_id)
     except Post.DoesNotExist:
         raise Http404
 
