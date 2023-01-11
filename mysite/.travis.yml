@@ -1,7 +1,7 @@
 language: python
 python:
-  - "3.10"
-isntall:
+  - "3.6"
+install:
   - pip install -r requirements.txt
   - python manage.py migrate
 script:
