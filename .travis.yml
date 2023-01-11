@@ -5,6 +5,6 @@ install:
   - pip install -r ./mysite/requirements.txt
   - python ./mysite/manage.py migrate
 before-script:
-  - cd ./mysite
+  - cd ./mysite/
 script:
   - python manage.py test
