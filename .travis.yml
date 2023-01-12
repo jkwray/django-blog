@@ -2,7 +2,7 @@ language: python
 python:
   - "3.9"
 install:
-  - pip install -r ./mysite/requirements.txt
+  - pip install -r requirements.txt
   - python ./mysite/manage.py migrate
 before_script:
   - cd ./mysite/
