@@ -10,7 +10,7 @@
             Posted by {{ post.author.username }} &mdash; {{ post.published_date }}
         </p>
         <div class="post-body">
-            {{ post.text }}
+            {{ post.text|truncatechars:40 }}...
         </div>
         <ul class="categories">
             {% for category in post.categories.all %}
