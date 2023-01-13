@@ -17,15 +17,17 @@ class PostListView(ListView):
     )
     template_name = "blogging/list.html"
 
+
 class PostDetailView(DetailView):
     context_object_name = "post_detail"
     queryset = Post.objects.exclude(published_date__exact=None)
     template_name = "blogging/detail.html"
 
+
 class PostAddView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "blogging/add.html"
-    fields = ['title', 'text']
+    fields = ["title", "text"]
     success_url = reverse_lazy("blog_index")
 
     def form_valid(self, form):
